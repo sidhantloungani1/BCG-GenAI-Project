@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Chatbot</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f4f4f4; }
+        .chatbox { width: 500px; margin: auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input[type=text] { width: 100%; padding: 10px; margin-top: 10px; }
+        input[type=submit] { padding: 10px 20px; margin-top: 10px; }
+        .response { margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="chatbox">
+    <h2>Financial Chatbot 🤖</h2>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Ask something like 'Average profit margin of Apple'" value="{{ user_query }}" required>
+        <input type="submit" value="Ask">
+    </form>
+    {% if response %}
+        <div class="response"><strong>Bot:</strong><br>{{ response|safe }}</div>
+    {% endif %}
+</div>
+</body>
+</html>
